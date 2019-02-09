@@ -11,7 +11,6 @@ export class HeroService {
 
   getHeroes(): Observable<Hero[]>{
     this.messageService.add('HeroService: fetched heroes1');
-    this.messageService.add('HeroService: fetched heroes2');
     return of(HEROES);
   }
 
@@ -20,7 +19,7 @@ export class HeroService {
   }
 
   getHero(id: Number):Observable<Hero>{
-    this.messageService.add(`HeroService is fetching hero with id=${id}`);
+    this.messageService.add(`HeroService is fetching hero with id=${id}. messageService.add is called from hero.service`);
     return of(HEROES.find(hero=> hero.id== id));
   }
   constructor(private messageService:MessageService) { }
