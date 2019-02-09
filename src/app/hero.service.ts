@@ -19,7 +19,7 @@ export class HeroService {
   }
 
   getHero(id: Number):Observable<Hero>{
-    this.messageService.add(`HeroService is fetching hero with id=${id}. messageService.add is called from hero.service`);
+    this.messageService.add(`HeroService is fetching hero with id=${id}.!`);
     return of(HEROES.find(hero=> hero.id== id));
   }
   constructor(private messageService:MessageService) { }
